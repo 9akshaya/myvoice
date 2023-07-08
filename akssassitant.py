@@ -1,4 +1,3 @@
-import pywhatkit
 import speech_recognition as sr
 import pyttsx3
 import pywhatkit
@@ -19,13 +18,13 @@ def take_command():
         voice=listener.listen(source)
         command=listener.recognize_google(voice)
         command=command.lower()
-        if "alexa" in command:
-          command=command.replace("alexa","")
+        if "robot" in command:
+          command=command.replace("robot","")
           print(command)
   except:
     pass
   return command
-def run_alexa():
+def run_robot():
    command=take_command()
    print(command)
    if "play" in command:
@@ -58,4 +57,4 @@ def run_alexa():
        talk('please say  the command again')
 
 while True:
-    run_alexa()
+    run_robot()
